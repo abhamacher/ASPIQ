@@ -18,6 +18,7 @@
 /* 	Last update: 	28th February 2020
  *	Script author: 	Anna Hamacher, HHU
  *	Modification:	Laura Wörmeyer, HHU (normalisation to pancreatic nuclei area, #164-180)
+ *	Modification:	Laura Wörmeyer, HHU (added line 64, sum slices for apotome images)
  *	
  *	Macro to process multiple images in a folder to 
  *	- measure specific thresholds inside this area for each channel
@@ -60,6 +61,7 @@ function processFile(workingDir, file) {
 	// Perform max intensity projection in case of live cell z-stack images
 	if (LiveCell && totalSlices > 4) {
 		run("Z Project...", "projection=[Max Intensity]");
+		run("Z Project...", "projection=[Sum Slices]");
 		Stack.setDisplayMode("composite");
 		close(imageTitle);
 		selectWindow("MAX_" + imageTitle);
