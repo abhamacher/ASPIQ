@@ -24,6 +24,7 @@
 
 /* 	Last update: 	28th February 2020 
  *	Script author: 	Anna Hamacher, HHU
+ *	Modification:	Laura Wörmeyer, HHU (added line 74, sum slices for apotome images)
  *	
  *	Macro to process multiple images in a folder to 
  *	- automatically segment the image (detect the pancreatic islets)
@@ -71,6 +72,7 @@ function processFile(input, output, file) {
 	// Perform max intensity projection in case of live cell z-stack images
 	if (LiveCell && totalSlices > 4) {
 		run("Z Project...", "projection=[Max Intensity]");
+		run("Z Project...", "projection=[Sum Slices]"); 
 		Stack.setDisplayMode("composite");
 		totalSlices = nSlices();
 		close(imageTitle);
