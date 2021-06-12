@@ -8,4 +8,4 @@ Beside providing a time-reducing approach in comparison with manual analyses, th
 Please read the ASPIQ_Workflow_Userguide for detailed instructions how to use the scripts. 
 
 
-#### Note: This branch contains the scripts used for live cell image measurement within the paper Scholz et al. 2021.
+#### Note: This branch contains the scripts used for live cell image measurement within the paper Scholz et al. 2021 (see https://doi.org/10.1016/j.chembiol.2021.05.011).
